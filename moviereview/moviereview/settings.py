@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-37j9tx^fu$ljp3t)qw#it)p!b+!r)i@!utrrfz_9ve!1qwcjlb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['django-level-one-hcqq.onrender.com'] 
-ALLOWED_HOSTS=['127.0.0.1']
+ALLOWED_HOSTS = ['django-level-one-hcqq.onrender.com','127.0.0.1' ] 
+
 
 
 
@@ -78,8 +78,16 @@ WSGI_APPLICATION = 'moviereview.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'movie_review',
+        'USER':'root',
+        'PASSWORD':'123456',
+        'HOST':'127.0.0.1',
+        'PORT':'3306',
+        'OPTIONS':{
+            'charset':"utf8mb4",
+            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
 
